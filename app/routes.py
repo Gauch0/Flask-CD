@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 from app import db
 from app.models import Users
-from flask import render_template
+from flask import render_template , redirect
 
 api = Blueprint('api', __name__, url_prefix='/apiV2')
 
@@ -9,7 +9,6 @@ api = Blueprint('api', __name__, url_prefix='/apiV2')
 @api.route('/')
 def home():
     return render_template("home.html")
-
 
 @api.route('/createUser', methods=['POST'])
 def addPersona():
